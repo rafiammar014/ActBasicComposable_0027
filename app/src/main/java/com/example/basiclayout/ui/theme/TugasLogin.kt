@@ -105,4 +105,21 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     color = Color.LightGray,
                     letterSpacing = 1.5.sp
                 )
+
+                Text(
+                    text = "Rafi Ammar Dinata",
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White,
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                Text(
+                    text = "ID: 20240140027",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color(0xFFFFD54F),
+                )
         }
+
