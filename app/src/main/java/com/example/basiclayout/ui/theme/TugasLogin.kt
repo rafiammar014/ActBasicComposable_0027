@@ -97,4 +97,12 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
+
+                Text(
+                    text = "PLAYER NAME",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.LightGray,
+                    letterSpacing = 1.5.sp
+                )
         }
