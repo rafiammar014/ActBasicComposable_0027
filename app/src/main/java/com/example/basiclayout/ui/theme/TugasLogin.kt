@@ -93,7 +93,11 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     modifier = Modifier
                         .size(160.dp) // Ukuran sedikit diperkecil agar pas di dalam kartu
                         .clip(CircleShape)
-                        .border(3.dp, Color(0xFF4DD0E1), CircleShape), // Border menyesuaikan warna tema
+                        .border(
+                            3.dp,
+                            Color(0xFF4DD0E1),
+                            CircleShape
+                        ), // Border menyesuaikan warna tema
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
@@ -121,5 +125,17 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     fontWeight = FontWeight.SemiBold,
                     color = Color(0xFFFFD54F),
                 )
+            }
         }
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun LoginScreenPreview() {
+    BasicLayoutTheme {
+        LoginScreen()
+    }
+}
 
