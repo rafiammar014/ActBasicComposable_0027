@@ -40,7 +40,22 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize(),
         )
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .systemBarsPadding()
+                .padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Spacer(modifier = Modifier.height(20.dp))
 
-        // (Kode selanjutnya akan ditambahkan di sini)
-    }
-}
+            Text(
+                text = "WELCOME",
+                fontSize = 32.sp,
+                fontWeight = FontWeight.ExtraBold,
+                color = Color(0xFF4DD0E1),
+                letterSpacing = 2.sp
+            )
+
+
+        }
