@@ -89,3 +89,39 @@ fun TataletakRowColumn(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
+    // val gambar = painterResource(id = R.drawable.notasinaton) // Aktifkan jika resource gambar tersedia
+    Column {
+        Box(
+            modifier = modifier.fillMaxWidth().height(150.dp).background(color = Color.Yellow),
+            contentAlignment = Alignment.Center
+        ) {
+            Column {
+                Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+                    Text(text = "Col1 Row1 Komponen1")
+                    Text(text = "Col1 Row1 Komponen2")
+                    Text(text = "Col1 Row1 Komponen3")
+                }
+                Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+                    Text(text = "Col1 Row2 Komponen1")
+                    Text(text = "Col1 Row2 Komponen2")
+                    Text(text = "Col1 Row2 Komponen3")
+                }
+            }
+        }
+        Spacer(modifier = Modifier.height(10.dp))
+        Box(
+            modifier = modifier.fillMaxWidth().height(300.dp).background(color = Color.Cyan),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = "My",
+                fontSize = 50.sp,
+                color = Color.Red,
+                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.Cursive
+            )
+        }
+    }
+}
