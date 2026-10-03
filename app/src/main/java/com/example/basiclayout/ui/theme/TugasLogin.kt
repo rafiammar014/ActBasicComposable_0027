@@ -34,21 +34,24 @@ fun LoginScreen(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier.fillMaxSize(),
     ) {
+        // Background tetap full screen
         Image(
             painter = painterResource(id = R.drawable.background),
             contentDescription = "Background Image",
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize(),
         )
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .systemBarsPadding()
-                .padding(24.dp),
+                .padding(24.dp), // Padding diperbesar agar tidak terlalu menempel ke tepi
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Spacer(modifier = Modifier.height(20.dp))
 
+            // Menggunakan warna cerah (Cyan muda) agar kontras dengan background gelap
             Text(
                 text = "WELCOME",
                 fontSize = 32.sp,
@@ -58,25 +61,28 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             )
 
             Text(
-                text = "Selamat datang, Rafi",
+                text = "Selamat datang, Rafi", // Typo diperbaiki
                 fontSize = 16.sp,
                 color = Color.LightGray,
             )
 
             Spacer(modifier = Modifier.height(30.dp))
+
             Image(
                 painter = painterResource(id = R.drawable.logo1),
                 contentDescription = "Logo",
-                modifier = Modifier.size(100.dp),
+                modifier = Modifier.size(100.dp), // Ukuran disesuaikan agar proporsional
             )
 
             Spacer(modifier = Modifier.height(40.dp))
 
+            // --- GLASSMORPHISM CARD ---
+            // Membungkus profil ke dalam kotak semi-transparan
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(24.dp))
-                    .background(Color.Black.copy(alpha = 0.5f))
+                    .background(Color.Black.copy(alpha = 0.5f)) // Warna hitam dengan transparansi 50%
                     .border(1.dp, Color.White.copy(alpha = 0.2f), RoundedCornerShape(24.dp))
                     .padding(vertical = 30.dp, horizontal = 20.dp),
                 contentAlignment = Alignment.Center
@@ -84,52 +90,48 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
-                )
+                ) {
+                    // Foto profil diletakkan di atas teks di dalam kartu
+                    Image(
+                        painter = painterResource(id = R.drawable.profile),
+                        contentDescription = "Profile Picture",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .size(160.dp) // Ukuran sedikit diperkecil agar pas di dalam kartu
+                            .clip(CircleShape)
+                            .border(3.dp, Color(0xFF4DD0E1), CircleShape), // Border menyesuaikan warna tema
+                    )
 
-                Image(
-                    painter = painterResource(id = R.drawable.profile),
-                    contentDescription = "Profile Picture",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .size(160.dp) // Ukuran sedikit diperkecil agar pas di dalam kartu
-                        .clip(CircleShape)
-                        .border(
-                            3.dp,
-                            Color(0xFF4DD0E1),
-                            CircleShape
-                        ), // Border menyesuaikan warna tema
-                )
+                    Spacer(modifier = Modifier.height(24.dp))
 
-                Spacer(modifier = Modifier.height(24.dp))
+                    Text(
+                        text = "PLAYER NAME",
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.LightGray,
+                        letterSpacing = 1.5.sp
+                    )
 
-                Text(
-                    text = "PLAYER NAME",
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.LightGray,
-                    letterSpacing = 1.5.sp
-                )
+                    Text(
+                        text = "Rafi Ammar Dinata",
+                        fontSize = 22.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.White,
+                    )
 
-                Text(
-                    text = "Rafi Ammar Dinata",
-                    fontSize = 22.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.White,
-                )
+                    Spacer(modifier = Modifier.height(8.dp))
 
-                Spacer(modifier = Modifier.height(8.dp))
-
-                Text(
-                    text = "ID: 20240140027",
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    color = Color(0xFFFFD54F),
-                )
+                    Text(
+                        text = "ID: 20240140027",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = Color(0xFFFFD54F),
+                    )
+                }
             }
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
@@ -138,4 +140,3 @@ fun LoginScreenPreview() {
         LoginScreen()
     }
 }
-
