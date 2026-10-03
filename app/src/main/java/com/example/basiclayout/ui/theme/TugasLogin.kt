@@ -58,7 +58,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             )
 
             Text(
-                text = "Selamat datang, Rafi", // Typo diperbaiki
+                text = "Selamat datang, Rafi",
                 fontSize = 16.sp,
                 color = Color.LightGray,
             )
@@ -67,9 +67,34 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             Image(
                 painter = painterResource(id = R.drawable.logo1),
                 contentDescription = "Logo",
-                modifier = Modifier.size(100.dp), // Ukuran disesuaikan agar proporsional
+                modifier = Modifier.size(100.dp),
             )
 
             Spacer(modifier = Modifier.height(40.dp))
 
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(24.dp))
+                    .background(Color.Black.copy(alpha = 0.5f))
+                    .border(1.dp, Color.White.copy(alpha = 0.2f), RoundedCornerShape(24.dp))
+                    .padding(vertical = 30.dp, horizontal = 20.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.profile),
+                    contentDescription = "Profile Picture",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .size(160.dp) // Ukuran sedikit diperkecil agar pas di dalam kartu
+                        .clip(CircleShape)
+                        .border(3.dp, Color(0xFF4DD0E1), CircleShape), // Border menyesuaikan warna tema
+                )
+
+                Spacer(modifier = Modifier.height(24.dp))
         }
