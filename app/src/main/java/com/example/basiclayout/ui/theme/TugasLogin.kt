@@ -57,5 +57,13 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                 letterSpacing = 2.sp
             )
 
+            Text(
+                text = "Selamat datang, Rafi", // Typo diperbaiki
+                fontSize = 16.sp,
+                color = Color.LightGray,
+            )
+
+            Spacer(modifier = Modifier.height(30.dp))
+
 
         }
