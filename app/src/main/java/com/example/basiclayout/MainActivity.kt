@@ -10,3 +10,17 @@ import androidx.compose.ui.Modifier
 import com.example.basiclayout.ui.theme.BasicLayoutTheme
 import com.example.mylayout.TataletakBoxColumnRow
 
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            BasicLayoutTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    TataletakBoxColumnRow(
+                        modifier = Modifier.padding(innerPadding)
+                    )
+                }
+            }
+        }
+    }
+}
